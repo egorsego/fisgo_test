@@ -1,0 +1,15 @@
+{
+   "data":{
+      "tasks":[
+         {
+            "task_id":600000282,
+            "data":{
+               "key":"MSw0OzVfMTAxMDE5LG6nPnksPMUKD8oMZlHDRWKtzchsOLGqffsnHpLMjxYvsWM0XDdHYqY4cs2GTT4/0sM6BwwD1sMYRfjRtBXXYCCRltrxzb6CfEDgqA2L3tvjZCJ6J6TqNb8RlEcKXb8Kgc0CbWljqEAlJ1X3VedpX+7w5bidCHBPu+bgGUMTLXrZrQgPYRBiCftwSEACIv9pZcWade5LjgcPBn+ES0saCe18VMM0a9oLFsNctYXTjj82sXbK2Z3h/fqFDypjs1JqisDJTrKeK2fAKhP7sjz++TgLigtoB2YLkjzFni8cErLNgpWWohO84W+j/O6FU/ArTc5yIPTU8XrCeS/12JZ5dA=",
+               "rem_id":"1"
+            },
+            "type":"key_activation"
+         }
+      ]
+   },
+   "result":"OK"
+}

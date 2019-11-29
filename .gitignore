@@ -1,0 +1,5 @@
+/.idea/*
+/target/*
+/FisGoTests.iml
+
+\.allure/
