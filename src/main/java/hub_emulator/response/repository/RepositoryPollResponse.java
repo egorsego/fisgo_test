@@ -223,6 +223,4 @@ public class RepositoryPollResponse {
 
         return HubRequest.builder().data(hubData).result("OK").build();
     }
-
-
 }

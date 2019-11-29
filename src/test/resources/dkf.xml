@@ -7,23 +7,7 @@
     <!--</listeners>-->
     <test name="dkf">
         <classes>
-            <class name="autotests.general.Ffd105Tests"/>
-            <class name="autotests.general.ActivateLicenseKeyTest"/>
-            <class name="autotests.general.RegistrationTests"/>
-            <class name="autotests.general.KabinetDreamkasTest"/>
-            <class name="autotests.general.JsonHubTests"/>
-            <class name="autotests.general.ShiftsTest"/>
-            <class name="autotests.dreamkasf.ReturnTest"/>
-            <class name="autotests.general.WeightGoodsTest"/>
-            <class name="autotests.dreamkasf.DKFUpdateTests"/>
-            <class name="autotests.dreamkasf.TobaccoSaleTest"/>
-            <class name="autotests.dreamkasf.FnConnectionTest"/>
-            <class name="autotests.general.PurchaseTest"/>
-            <class name="autotests.general.ExternalPurchaseTest"/>
-            <class name="autotests.general.ReregistrationChangeFn"/>
-            <class name="autotests.dreamkasf.CorrectionChequeTest"/>
-            <class name="autotests.general.ExternalPurchaseWithKabinetAPITest"/>
-            <class name="autotests.general.TimeTests"/>
+            <class name="autotests.general.SandboxTest"/>
         </classes>
     </test>
 

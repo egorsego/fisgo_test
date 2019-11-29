@@ -1,9 +1,0 @@
-<suite name="Kassa-bus">
-
-    <test name="kf">
-        <classes>
-            <class name="autotests.kassaf.FactoryTest"/>
-        </classes>
-    </test>
-
-</suite>
