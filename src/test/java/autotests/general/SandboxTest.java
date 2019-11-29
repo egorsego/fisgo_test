@@ -16,7 +16,7 @@ public class SandboxTest extends BaseTestClass {
 
     @Test
     public void myTest() {
-        int result = doStuffWithHub(1, 3);
+        int result = doStuffWithHub(1, 2);
         Assert.assertEquals(3, result);
     }
 
