@@ -68,6 +68,7 @@ public class SNOChangeTest extends BaseTestClass {
         manager.pressKey(KeyEnum.keyMenu);
         manager.pressKey(KeyEnum.key5);
         manager.pressKey(KeyEnum.key7);
+        manager.sendCommands();
         manager.pressKey(String.valueOf(taxSystemItemNumber));
         manager.pressKey(KeyEnum.keyEnter);
         manager.sendCommands();
