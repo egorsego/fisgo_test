@@ -65955,3 +65955,54 @@ java.net.SocketException: Connection reset by peer: socket write error
 }/r/n
 15:39:48 INFO  Manager:88 - SOCKET IS CLOSE
 15:39:49 INFO  BaseTestClass:42 - Teardown
+16:28:04 INFO  BaseTestClass:33 - @BeforeSuite - начало тестов
+16:28:06 INFO  Server:54 - Сервер HUB-EMUL: http://192.168.243.3:8283
+16:28:08 INFO  BaseTestClass:49 - CashBox(keyboard=application_manager.cashbox.Keyboard@1179fc8c, boxType=DREAMKAS_F, ipAddr=192.168.242.180, sshPass=root)
+16:28:10 INFO  SSHConnection:38 - Connected to host: 192.168.242.180 under root user.
+16:28:10 INFO  SSHConnection:116 - exit-status: 0
+16:28:10 INFO  SSHConnection:116 - exit-status: 1
+16:28:10 INFO  SSHConnection:116 - exit-status: 1
+16:28:10 INFO  SSHConnection:116 - exit-status: 127
+16:28:10 INFO  SSHConnection:116 - exit-status: 0
+16:28:11 INFO  Manager:67 - 192.168.242.180
+16:28:11 INFO  Manager:68 - 3425
+16:28:12 INFO  TCPConnection:43 - Соединение установлено
+16:28:14 INFO  TCPConnection:110 - EVENTS: Соединение установлено
+16:28:33 DEBUG Manager:215 - jsonStr = {"uuid":"","tasks":[{"task_id":1,"command":"KEYPAD_ACTION","data":{"key1":27,"key2":0,"action":"KEY_DOWN"}},{"task_id":2,"command":"KEYPAD_ACTION","data":{"key1":28,"key2":0,"action":"KEY_DOWN"}},{"task_id":3,"command":"KEYPAD_ACTION","data":{"key1":29,"key2":0,"action":"KEY_DOWN"}},{"task_id":4,"command":"KEYPAD_ACTION","data":{"key1":19,"key2":0,"action":"KEY_DOWN"}}]}
+16:28:36 DEBUG TCPConnection:91 - data = {
+    "tasks": [
+        {
+            "result": "OK",
+            "task_id": 1
+        },
+        {
+            "result": "OK",
+            "task_id": 2
+        },
+        {
+            "result": "OK",
+            "task_id": 3
+        },
+        {
+            "result": "OK",
+            "task_id": 4
+        }
+    ],
+    "uuid": ""
+}/r/n
+16:28:38 DEBUG Manager:215 - jsonStr = {"uuid":"","tasks":[{"task_id":1,"command":"CFG_GET","cfg_data":{"fields":["KKT_PLANT_NUM"]}}]}
+16:28:40 DEBUG TCPConnection:91 - data = {
+    "tasks": [
+        {
+            "cfg_data": {
+                "KKT_PLANT_NUM": "0496040818"
+            },
+            "result": "OK",
+            "task_id": 1
+        }
+    ],
+    "uuid": ""
+}/r/n
+16:28:40 DEBUG BaseTestClass:78 - Заводской номер кассы - 0496040818
+16:28:43 INFO  Manager:88 - SOCKET IS CLOSE
+16:28:43 INFO  BaseTestClass:42 - Teardown
