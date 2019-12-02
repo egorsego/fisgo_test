@@ -7,7 +7,7 @@
     <!--</listeners>-->
     <test name="dkf">
         <classes>
-            <class name="autotests.general.SandboxTest"/>
+            <class name="autotests.general.SNOChangeTest"/>
         </classes>
     </test>
 
