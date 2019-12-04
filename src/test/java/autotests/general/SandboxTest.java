@@ -15,14 +15,35 @@ import org.testng.annotations.Test;
 public class SandboxTest extends BaseTestClass {
 
     @Test
-    public void myTest() {
-        int result = doStuffWithHub(1, 2);
+    public void additionTest() {
+        int result = add(1, 2);
         Assert.assertEquals(3, result);
     }
 
-    @Step("Эксперимент")
-    private int doStuffWithHub(int a, int b) {
+    @Test
+    public void substractionTest() {
+        int result = add(3, 1);
+        Assert.assertEquals(2, result);
+    }
+
+    @Test
+    public void problematicTest() {
+        int result = add(add(0, 1), substract(10,1));
+        Assert.assertEquals(9, result);
+    }
+
+    @Step("Сложение")
+    private int add(int a, int b) {
         return a + b;
+    }
+
+    @Step("Вычитание")
+    private int substract(int a, int b) {
+        return a - b;
+    }
+        //@Step("Эксперимент")
+        //private int doStuffWithHub(int a, int b) {
+        //return a + b;
         //manager.executeSshCommand("killall fiscat");
         //manager.iAmHub(true);
         //manager.setPollTime(10);
@@ -30,5 +51,5 @@ public class SandboxTest extends BaseTestClass {
         //HttpRequest[] requests = server.getRequests();
         //HubRequest hr = server.getLastRequest(MethodsEnum.WHO_AM_I);
         //steps.hub().answerPoll(RepositoryPollResponse.getActivateKey(kktPlantNum));
-    }
+        //}
 }
