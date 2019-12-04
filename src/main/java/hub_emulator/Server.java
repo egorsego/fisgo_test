@@ -44,7 +44,7 @@ public class Server {
     @Getter
     private HttpRequest[] requests;
 
-    public static EnumMap<MethodsEnum, ArrayList<HttpRequest>> recordedRequests;
+    private static EnumMap<MethodsEnum, ArrayList<HttpRequest>> recordedRequests;
 
     public Server() {
         initMapRecordedRequests();

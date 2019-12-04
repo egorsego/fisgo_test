@@ -61,7 +61,6 @@ public class RepositoryPollResponse {
         String path = "";
         switch (kktPlantNum) {
             //если дкф
-            //case "0498010011":
             case "0496040818":
                 path = "./src/main/resources/hub-responses/license-keys/licenseKeyDKF";
                 break;
@@ -223,4 +222,6 @@ public class RepositoryPollResponse {
 
         return HubRequest.builder().data(hubData).result("OK").build();
     }
+
+
 }
