@@ -21,15 +21,9 @@ public class SandboxTest extends BaseTestClass {
     }
 
     @Test
-    public void substractionTest() {
-        int result = add(3, 1);
+    public void subtractionsTest() {
+        int result = subtract(3, 1);
         Assert.assertEquals(2, result);
-    }
-
-    @Test
-    public void problematicTest() {
-        int result = add(add(0, 1), substract(10,1));
-        Assert.assertEquals(9, result);
     }
 
     @Step("Сложение")
@@ -38,7 +32,7 @@ public class SandboxTest extends BaseTestClass {
     }
 
     @Step("Вычитание")
-    private int substract(int a, int b) {
+    private int subtract(int a, int b) {
         return a - b;
     }
         //@Step("Эксперимент")
