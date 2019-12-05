@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class FnConnectionTest extends BaseTestClass {
+public class  FnConnectionTest extends BaseTestClass {
 
     @BeforeClass
     public void before() {

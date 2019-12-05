@@ -1,6 +1,5 @@
 package autotests.dreamkasf;
 
-import application_manager.api_manager.events.EventsContainer;
 import application_manager.api_manager.json.response.data.Position;
 import application_manager.api_manager.json.response.data.Tag;
 import application_manager.cashbox.KeyEnum;
@@ -16,8 +15,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -50,9 +47,7 @@ public class TobaccoSaleTest extends BaseTestClass {
     public void testNotificationIfNot18Years() {
         manager.clickScanner(DATA_MATRIX_CODE);
 
-        getLegalDataBirthday();
-
-        steps.expectation().waitExpectedLcd("Убедитесь, что", "дата рождения", "покупателя", "до " + getLegalDataBirthday());
+        steps.expectation().waitExpectedLcd("Проверьте", "паспорт", "покупателя:есть", "ли ему 18 лет");
 
         manager.pressKey(KeyEnum.keyCancel);
         manager.sendCommands();
@@ -62,10 +57,6 @@ public class TobaccoSaleTest extends BaseTestClass {
         assertNull(position.getGoodsResponse());
     }
 
-    private String getLegalDataBirthday() {
-        return DateTimeFormatter.ofPattern("dd.MM.yyyy").format(LocalDate.now().minusYears(18));
-    }
-
     @Test
     public void testNotificationIf18Years() {
         server.clearRequests();
@@ -73,7 +64,7 @@ public class TobaccoSaleTest extends BaseTestClass {
 
         manager.clickScanner(DATA_MATRIX_CODE);
 
-        steps.expectation().waitExpectedLcd("Убедитесь, что", "дата рождения", "покупателя", "до " + getLegalDataBirthday());
+        steps.expectation().waitExpectedLcd("Проверьте", "паспорт", "покупателя:есть", "ли ему 18 лет");
 
         manager.pressKey(KeyEnum.keyEnter);
         manager.sendCommands();
@@ -82,7 +73,7 @@ public class TobaccoSaleTest extends BaseTestClass {
         steps.payment().completePurchase();
 
         checkPurchaseDocumentReport();
-        checkPrinBuffer();
+        checkPrintBuffer();
         assertTrue(checkFdFromFn(lastFdNum));
     }
 
@@ -90,7 +81,8 @@ public class TobaccoSaleTest extends BaseTestClass {
     public void testWarningIfAlreadyAdded() {
         manager.clickScanner(DATA_MATRIX_CODE);
 
-        steps.expectation().waitExpectedLcd("Убедитесь, что", "дата рождения", "покупателя", "до " + getLegalDataBirthday());
+        steps.expectation().waitExpectedLcd("Проверьте", "паспорт", "покупателя:есть", "ли ему 18 лет");
+
         manager.pressKey(KeyEnum.keyEnter);
         manager.sendCommands();
 
@@ -275,11 +267,12 @@ public class TobaccoSaleTest extends BaseTestClass {
     }
 
     @Step("Проверка печатного буфера")
-    private void checkPrinBuffer() {
+    private void checkPrintBuffer() {
         assertTrue(manager.getEventsContainer().isContainsPrintEvent("ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"РОМАШКА\"  Улица Пушкина дом колотушкrина\n"));
         assertTrue(manager.getEventsContainer().isContainsPrintEvent("КАССИР Админ\n" +
                 "1.KENT\n" +
-                "   100.00 * 1       =     100.00\n" +
+                "   100.00 * 1       =     100.00\n"));
+        assertTrue(manager.getEventsContainer().isContainsPrintEvent(" ПОЛНЫЙ РАСЧЁТ     \n" +
                 " C НДС 0%           =     100.00\n"));
         assertTrue(manager.getEventsContainer().isContainsPrintEvent("ИТОГ                =     100.00\n"));
         assertTrue(manager.getEventsContainer().isContainsPrintEvent("КТ:00050430771947236334614F3C4F54\n"));

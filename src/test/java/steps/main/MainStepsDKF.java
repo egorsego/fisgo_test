@@ -31,14 +31,28 @@ public class MainStepsDKF extends AbstractMainSteps {
         if (cashBox.getBoxType().equals(PULSE_FA)) {
             return;
         }
-        while (!manager.getEventsContainer().isContainsLcdEvents("Введите пароль")) {
+        while (!manager.getEventsContainer().isContainsLcdEvents("Введите пароль")
+                && !manager.getEventsContainer().isContainsLcdEvents("На кассе не",
+                                                                                "установлен Ключ",
+                                                                                "Позвоните",
+                                                                                "8 800 551-46-65")) {
             manager.sleepPlease(1000);
         }
+
+        if(manager.getEventsContainer().isContainsLcdEvents("На кассе не",
+                                                                        "установлен Ключ",
+                                                                        "Позвоните",
+                                                                        "8 800 551-46-65")) {
+            manager.pressKey(KeyEnum.keyEnter);
+            manager.sendCommands();
+        }
+
         manager.pressKey(KeyEnum.key1);
         manager.pressKey(KeyEnum.key2);
         manager.pressKey(KeyEnum.key3);
         manager.pressKey(KeyEnum.key4);
         manager.sendCommands();
+
         manager.getEventsContainer().clearLcdEvents();
         manager.sleepPlease(2000);
     }
@@ -90,6 +104,7 @@ public class MainStepsDKF extends AbstractMainSteps {
         manager.stop();
         manager.sleepPlease(4_000);
         manager.rebootFiscat();
+
         inputPassword();
         log.info("FINISH TECHNICAL ZEROING");
     }

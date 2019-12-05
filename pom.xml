@@ -32,6 +32,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/kf.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/dkf.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/dkf_test.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/krb.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
